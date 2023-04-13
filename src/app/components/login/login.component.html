@@ -1,0 +1,10 @@
+<div class="loginbox">
+    <form >
+        <label for="">Enter user name</label>
+        <input type="text" name="username" id="" placeholder="username..."class="form-control" [(ngModel)]="uname">
+        <label for="">Enter Password</label>
+        <input type="password" name="password" id="" placeholder="password..."class="form-control"  [(ngModel)]="upass">
+    <button type="button" class="btn btn-primary mt-2" (click)="getData()">Login</button>
+    <a href="/user">Create account</a>
+    </form>
+</div>

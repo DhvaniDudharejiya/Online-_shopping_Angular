@@ -1,0 +1,83 @@
+{
+  "products": [
+    {
+      "id": 101,
+      "title": "Teddy",
+      "image": "../../../assets/product/teddy1.jpg",
+      "description": "Lorem ipsum dolor sit amet  sint atque rem autem minima sapiente.",
+      "price": 20000
+    },
+    {
+      "description": "Lorem ipsum dolor sit amet  sint atque rem autem minima sapiente.",
+      "id": 102,
+      "image": "../../../assets/product/teddy2.jpg",
+      "price": 2000,
+      "title": "Teddy"
+    },
+    {
+      "description": "Lorem ipsum dolor sit amet  sint atque rem autem minima sapiente.",
+      "id": 103,
+      "image": "../../../assets/product/teddy7.jpg",
+      "price": 2000,
+      "title": "Teddy"
+    },
+    {
+      "description": "Lorem ipsum dolor sit amet  sint atque rem autem minima sapiente.",
+      "id": 104,
+      "image": "../../../assets/product/teddy4.jpg",
+      "price": 2000,
+      "title": "Teddy"
+    },
+    {
+      "description": "Lorem ipsum dolor sit amet  sint atque rem autem minima sapiente.",
+      "id": 105,
+      "image": "../../../assets/product/teddy5.jpg",
+      "price": 2000,
+      "title": "Teddy"
+    },
+    {
+      "description": "Lorem ipsum dolor sit amet  sint atque rem autem minima sapiente.",
+      "id": 106,
+      "image": "../../../assets/product/teddy6.jpg",
+      "price": 2000,
+      "title": "Teddy"
+    }
+  ],
+  "Users": [
+    {
+      "id": 1,
+      "username": "Dhvani",
+      "password": "123"
+    },
+    {
+      "id": 2,
+      "username": "Sandip",
+      "password": "123"
+    },
+    {
+      "id": 3,
+      "username": "admin",
+      "password": "123"
+    },
+    {
+      "username": "devansh",
+      "address": "Ahemdabad",
+      "email": "abc@gmail.com",
+      "lname": "patel",
+      "mno": "devansh",
+      "password": "987",
+      "term": true,
+      "id": 4
+    },
+    {
+      "username": "devansh",
+      "address": "Palanpur",
+      "email": "dddd@gmail.com",
+      "lname": "patel",
+      "mno": "1111111111",
+      "password": "456",
+      "term": true,
+      "id": 5
+    }
+  ]
+}

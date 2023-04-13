@@ -1,0 +1,66 @@
+<p>add works!</p>
+<!-- reset() is use for rf form -->
+<!-- myForm.resetForm() ---- use for reset form template driven form -->
+<form #myForm="ngForm" (ngSubmit)="addData(myForm.value)">
+    <div class="row">
+        <!-- <div class="col-sm-6">
+            <label>Id</label>
+            <input type="text" name="id" #refid="ngModel" class="form-control" placeholder="Enter your Product ID"
+                ngModel required>
+            <div *ngIf="refid.invalid && refid.touched" class="alert alert-danger">
+                Product_Id is required
+            </div>
+        </div> -->
+        <div class="col-sm-6">
+            <label>Product_Title</label>
+            <input type="text" name="title" #reftitle="ngModel" class="form-control" placeholder="Enter your Product_Title" ngModel
+                required>
+            <div *ngIf="reftitle.invalid && reftitle.touched" class="alert alert-danger">
+                Product_Title is required
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-6">
+            <label>Product_Image</label>
+            <input type="text" name="image" #refimg="ngModel" class="form-control" placeholder="Enter your Product_Image"
+                ngModel required>
+            <div *ngIf="refimg.invalid && refimg.touched" class="alert alert-danger">
+                Image is required
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <label>Description</label>
+            <input type="text" name="description" #refdescription="ngModel" class="form-control"
+                placeholder="Enter your description" ngModel required>
+            <div *ngIf="refdescription.invalid && refdescription.touched" class="alert alert-danger">
+                Description is required
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-6">
+            <label>Price</label>
+            <input type="text" name="price" #refprice="ngModel" class="form-control" placeholder="Enter your Price"
+                ngModel required>
+            <div *ngIf="refprice.invalid && refprice.touched" class="alert alert-danger">
+                Price is required
+            </div>
+        </div>
+        <!-- <div class="col-sm-6">
+            <label>Address</label>
+            <input type="text" name="address" #refaddress="ngModel" class="form-control"
+                placeholder="Enter your Address" ngModel required>
+            <div *ngIf="refaddress.invalid && refaddress.touched" class="alert alert-danger">
+                address is required
+            </div>
+        </div> -->
+    </div>
+    <br>
+    
+    <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Save</button>
+
+
+</form>

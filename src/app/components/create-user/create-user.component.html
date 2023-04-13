@@ -1,0 +1,129 @@
+<!-- #myForm="ngForm" (ngSubmit)="getData(myForm.value)" -->
+<form  #myForm="ngForm" (ngSubmit)="getData(myForm.value)">
+    <div class="row">
+        <div class="col-sm-6">
+            <label>First Name</label>
+            <!-- propertybinding in constant.ts -->
+            <input type="text" name="fname" #refName="ngModel" class="form-control" placeholder="Enter your first name"
+                ngModel required>
+            <div *ngIf="refName.invalid && refName.touched" class="alert alert-danger">
+                <div *ngIf="refName.errors?.['required']">
+                    First name is required
+                </div>
+<!-- 
+                <div *ngIf="refName.errors?.['pattern']">
+                    Name is invalid. At least 3 letters (max 30)
+                </div> -->
+
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <label>Last Name</label>
+
+            <input type="text" name="lname" #reflName="ngModel" class="form-control" placeholder="Enter your last name"
+                pattern="[a-zA-Z]{3,30}" ngModel required>
+
+
+            <div *ngIf="reflName.invalid && reflName.touched" class="alert alert-danger">
+
+                <div *ngIf="reflName.errors?.['required']">
+                    Last name is required
+                </div>
+
+                <div *ngIf="reflName.errors?.['pattern']">
+                    Name is invalid. At least 3 letters (max 30)
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <label>Password</label>
+
+            <input type="password" name="pass" #refpass="ngModel" class="form-control" placeholder="Enter your Password"
+                ngModel required>
+
+
+            <div *ngIf="refpass.invalid && refpass.touched" class="alert alert-danger">
+
+                <div *ngIf="refpass.errors?.['required']">
+                    Password is required
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <label>Email</label>
+
+            <input type="text" name="email" #refemail="ngModel" class="form-control" placeholder="Enter your  Email"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" ngModel required>
+
+
+            <div *ngIf="refemail.invalid && refemail.touched" class="alert alert-danger">
+
+                <div *ngIf="refemail.errors?.['required']">
+                    Email is required
+                </div>
+
+                <div *ngIf="refemail.errors?.['pattern']">
+                    Email is invalid.
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- Row for Courses -->
+    <div class="row">
+        <div class="col-sm-6">
+            <label>Address</label>
+
+
+            <!-- propertybinding in constant.ts -->
+            <input type="text" name="address" #refAddress="ngModel" class="form-control" placeholder="Enter your Address"
+                ngModel required>
+            <div *ngIf="refAddress.invalid && refAddress.touched" class="alert alert-danger">
+
+                <div *ngIf="refAddress.errors?.['required']">
+                    Address is required
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <label for="">Mobile No</label>
+            <input type="text" name="mno" #refmno="ngModel" class="form-control" placeholder="Enter your Number"
+                pattern="[0-9]{10,10}" ngModel required>
+
+
+            <div *ngIf="refmno.invalid && refmno.touched" class="alert alert-danger">
+
+                <div *ngIf="refmno.errors?.['required']">
+                    Number is required
+                </div>
+                <div *ngIf="refmno.errors?.['pattern']">
+                    Number is inValid
+                </div>
+            </div>
+        </div>
+<br>
+        <div class="col-sm-7 mt-2">
+            <label for="">
+                <input type="checkbox" name="term" #refTerm="ngModel" ngModel required>
+                I accept the terms and conditions
+            </label>
+            <div *ngIf="refTerm.invalid && refTerm.touched" class="alert alert-danger">
+
+                <div *ngIf="refTerm.errors?.['required']">
+                    Please accept the terms and conditions
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Submit</button>
+
+
+</form>

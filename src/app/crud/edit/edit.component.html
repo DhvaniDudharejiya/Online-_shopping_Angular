@@ -1,0 +1,47 @@
+
+<!-- reset() is use for rf form -->
+<!-- myForm.resetForm() ---- use for reset form template driven form -->
+<form #myForm="ngForm"  (ngSubmit)="putData(myForm.value)">
+    <div class="row">
+        <div class="col-sm-6">
+            <label>ID</label>
+            <input type="text" name="id" #refid="ngModel" class="form-control" placeholder="Enter your Product_ID"
+                required [ngModel]="productData?.id">
+        </div>
+        <div class="col-sm-6">
+            <label>Title</label>
+            <input type="text" name="title" #reftitle="ngModel" class="form-control" placeholder="Enter your Product_Title" [ngModel]="productData?.title"
+                required>
+
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-6">
+            <label>Image</label>
+            <input type="text" name="image" #refimage="ngModel" class="form-control" placeholder="Enter your Image"
+                [ngModel]="productData?.image" required>
+
+        </div>
+        <div class="col-sm-6">
+            <label>Description</label>
+            <input type="text" name="description" #refdescription="ngModel" class="form-control"
+                placeholder="Enter your Description" [ngModel]="productData?.description" required>
+
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-6">
+            <label>Price</label>
+            <input type="text" name="price" #refprice="ngModel" class="form-control" placeholder="Enter your Image"
+                [ngModel]="productData?.price" required>
+
+        </div>
+   
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Save</button>
+
+
+</form>

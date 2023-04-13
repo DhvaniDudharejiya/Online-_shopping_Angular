@@ -1,0 +1,46 @@
+<p>dashboard works!</p>
+<!-- <h1> show data with json server data.service</h1> -->
+<h3> Showing Data</h3>
+
+<div class="row">
+    <div class="col-sm-8">
+        <button class="btn btn-primary" routerLink="add">Add <i class="fa fa-plus ms-2 mt-1" aria-hidden="true"></i>
+        </button>
+    </div>
+    <div class="col-sm-4">
+        <input type="text" name="search" id="" class="form-control"  [(ngModel)]="term" placeholder="Search....">
+    </div>
+</div>
+
+<hr>
+<br>
+<table class="table table-light table-hover table-bordered ">
+    <thead>
+        <tr>
+            <th>Id <i class="fa fa-sort" aria-hidden="true"></i></th>
+            <th>Title <i class="fa fa-sort" aria-hidden="true"></i></th>
+            <th> Image<i class="fa fa-sort" aria-hidden="true"></i></th>
+            <th>Description <i class="fa fa-sort" aria-hidden="true"></i></th>
+            <th> price <i class="fa fa-sort" aria-hidden="true"></i></th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let p of productData  | filter:term">
+        <!-- *ngFor="let e of empData  | filter:term  | paginate: { itemsPerPage: 5, currentPage: pageno } | orderBy: order : reverse" -->
+        <tr>
+            <td>{{p.id}}</td>
+            <td>{{p.title}}</td>
+            <td><img src="{{p.image}}" alt=""></td>
+            <td>{{p.description}}</td>
+            <td>{{p.price}}</td>
+            <td>
+                <button class="btn btn-outline-success m-2" [routerLink]= "['edit', p.id]"><i class="fa fa-pencil-square-o"
+                        aria-hidden="true"></i></button>
+                <button class="btn btn-outline-danger m-2" (click)="delete(p.id)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<!-- <pagination-controls (pageChange)="pageno = $event"></pagination-controls>
+[routerLink]="['edit', e.id]" -->
+<!-- (click)="delete(e.id)" -->
